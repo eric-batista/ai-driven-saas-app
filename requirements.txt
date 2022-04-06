@@ -3,3 +3,5 @@ python-dotenv
 fastapi
 uvicorn[standard]
 python-decouple
+awscli
+aws-cdk-lib
