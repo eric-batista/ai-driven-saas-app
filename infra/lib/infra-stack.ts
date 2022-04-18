@@ -8,11 +8,11 @@ export class InfraStack extends Stack {
 
     const layer = new lambda.LayerVersion(this, "BaseLayer", {
       code: lambda.Code.fromAsset("lambda_base_layer/layer.zip"),
-      compatibleRuntimes: [lambda.Runtime.PYTHON_3_9],
+      compatibleRuntimes: [lambda.Runtime.PYTHON_3_7],
     });
 
     const apiLambda = new lambda.Function(this, "ApiFunction", {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_7,
       code: lambda.Code.fromAsset("../src/"),
       handler: "api.handler",
       layers: [layer],

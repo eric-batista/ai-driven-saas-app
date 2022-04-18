@@ -1,17 +1,13 @@
-# pylint: disable=wrong-import-order
-# pylint: disable=wrong-import-position
 '''
 This module will implement the API routes for GPT-3 model
 '''
-import sys
-from os.path import abspath
-sys.path.append(abspath('./../../'))
-
 from fastapi import FastAPI, HTTPException
-from src.app.ai_model import generate_branding_snippet, generate_keywords
+from ai_model import generate_branding_snippet, generate_keywords
+from mangum import Mangum
 
 
 app = FastAPI()
+handler = Mangum(app)
 
 
 MAX_INPUT_LENGTH = 32
@@ -50,7 +46,7 @@ async def generate_branding_keyword_route(prompt: str):
     return {'snippet': None, 'keywords': keywords}
 
 @app.get('/generate_snippet_and_keywords')
-async def generate_branding_keyword_route(prompt: str):
+async def generate_branding_snippet_and_keyword_route(prompt: str):
     '''
     >>> This route use the GET method to generate branding snippet and keywords
     '''

@@ -1,4 +1,4 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/python-3-anaconda/.devcontainer/base.Dockerfile
+# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.231.4/containers/python-3-anaconda/.devcontainer/base.Dockerfile
 
 FROM mcr.microsoft.com/vscode/devcontainers/anaconda:0-3
 

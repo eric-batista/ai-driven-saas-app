@@ -2,5 +2,5 @@ fastapi
 mangum
 openai
 requests
-python-dotenv
+numpy
 python-decouple

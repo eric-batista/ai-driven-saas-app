@@ -6,6 +6,7 @@ import argparse
 import re
 import openai
 from decouple import config
+from typing import List
 
 
 MAX_INPUT_LENGTH = 12
@@ -59,7 +60,7 @@ def generate_branding_snippet(prompt: str) -> str:
     return branding_text
 
 
-def generate_keywords(prompt: str) -> list[str]:
+def generate_keywords(prompt: str) -> List[str]:
     '''
     >>> This method generate the related branding keywords by passing a prompt argument in GPT-3 model
     '''
